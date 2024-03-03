@@ -1,32 +1,13 @@
 import Image from "next/image";
 import { Card } from "@repo/ui/card";
 import { Code } from "@repo/ui/code";
-import styles from "./page.module.css";
+//import styles from "./page.module.css";
 import { Button } from "@repo/ui/button";
-import { AppShellLayout } from "@repo/ui/AppShellLayout";
+import { DoubleNavbarAdminDash } from "@repo/ui/DoubleNavbarAdminDash";
+import { DemoDonutChart } from "@repo/ui/DemoDonutChart";
+import { Container } from '@mantine/core';
 
-function Gradient({
-  conic,
-  className,
-  small,
-}: {
-  small?: boolean;
-  conic?: boolean;
-  className?: string;
-}): JSX.Element {
-  return (
-    <span
-      className={[
-        styles.gradient,
-        conic ? styles.glowConic : undefined,
-        small ? styles.gradientSmall : styles.gradientLarge,
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    />
-  );
-}
+
 
 const LINKS = [
   {
@@ -56,11 +37,9 @@ export default function Page(): JSX.Element {
 
 
   return (
-    <main className={styles.main}>
-      
-    <AppShellLayout/>
-      
-      
+    <main>
+	<DoubleNavbarAdminDash/>
+
     </main>
   );
 }

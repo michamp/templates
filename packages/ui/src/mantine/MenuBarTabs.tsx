@@ -30,9 +30,9 @@ import {
 import classes from './MenuBarTabs.module.css';
 
 const user = {
-  name: 'Jane Spoonfighter',
-  email: 'janspoon@fighter.dev',
-  image: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-5.png',
+  name: 'Jane Green-McCoy',
+  email: 'janegreen-mccoy@yourcompany.dev',
+  image: '/avatar.png',
 };
 
 const tabs = [

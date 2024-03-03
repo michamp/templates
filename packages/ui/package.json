@@ -8,8 +8,9 @@
     "./code": "./src/code.tsx",
     "./DoubleNavbar": "./src/mantine/DoubleNavbar.tsx",
     "./MenuBarTabs": "./src/mantine/MenuBarTabs.tsx",
-    "./AppShellLayout": "./src/mantine/AppShellLayout.tsx",
-    "./DemoDonutChart": "./src/mantine/DemoDonutChart.tsx"
+    "./DoubleNavbarAdminDash": "./src/mantine/DoubleNavbarAdminDash.tsx",
+    "./DemoDonutChart": "./src/mantine/DemoDonutChart.tsx",
+    "./DemoAreaChart": "./src/mantine/DemoAreaChart.tsx"
     
 
   },

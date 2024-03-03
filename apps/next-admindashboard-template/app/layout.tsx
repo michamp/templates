@@ -1,4 +1,4 @@
-import "./globals.css";
+//import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -11,7 +11,7 @@ import { ColorSchemeScript, MantineProvider, createTheme} from '@mantine/core';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next Admin Dashboard",
+  title: "Double Navbar Admin Dashboard",
   description: "Simple Next Mantine Admin Dashboard Template",
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme} defaultColorScheme="dark">
+        <MantineProvider theme={theme} defaultColorScheme="light">
           {children}
         </MantineProvider>
       </body>

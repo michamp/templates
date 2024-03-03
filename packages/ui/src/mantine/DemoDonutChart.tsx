@@ -5,5 +5,5 @@ import { data } from './data';
 
 export function DemoDonutChart() {
 
-  return <DonutChart data={data} />;
+  return <DonutChart withLabelsLine withLabels  data={data} chartLabel="By Country" />;
 }
