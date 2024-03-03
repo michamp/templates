@@ -18,7 +18,10 @@
   },
   "packageManager": "yarn@1.22.21",
   "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "apps/**",
+    "packages/**"
+  ],
+  "dependencies": {
+    "@tabler/icons-react": "^2.47.0"
+  }
 }
