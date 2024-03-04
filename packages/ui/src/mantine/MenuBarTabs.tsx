@@ -32,7 +32,7 @@ import classes from './MenuBarTabs.module.css';
 const user = {
   name: 'Jane Green-McCoy',
   email: 'janegreen-mccoy@yourcompany.dev',
-  image: '/avatar.png',
+  image: '/hajib.png',
 };
 
 const tabs = [
