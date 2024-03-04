@@ -10,7 +10,10 @@
     "./MenuBarTabs": "./src/mantine/MenuBarTabs.tsx",
     "./DoubleNavbarAdminDash": "./src/mantine/DoubleNavbarAdminDash.tsx",
     "./DemoDonutChart": "./src/mantine/DemoDonutChart.tsx",
-    "./DemoAreaChart": "./src/mantine/DemoAreaChart.tsx"
+    "./DemoAreaChart": "./src/mantine/DemoAreaChart.tsx",
+    "./AdminDash": "./src/mantine/MichampAdmin.tsx",
+    "./DashMenuItem": "./src/mantine/MichampAdmin.tsx",
+    "./SubMenuItem": "./src/mantine/MichampAdmin.tsx"
     
 
   },

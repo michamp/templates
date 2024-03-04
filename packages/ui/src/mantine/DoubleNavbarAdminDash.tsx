@@ -1,5 +1,7 @@
 "use client";
 
+import {AdminDash,DashMenuItem,SubMenuItem} from "./MichampAdmin"
+
 import { AppShell, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MenuBarTabs } from "@repo/ui/MenuBarTabs";
@@ -34,10 +36,7 @@ import { Stepper} from '@mantine/core';
 import { Timeline, Text } from '@mantine/core';
 import { IconGitBranch, IconGitPullRequest, IconGitCommit, IconMessageDots } from '@tabler/icons-react';
 
-import { Table } from '@mantine/core';
-
-
-import { Image } from '@mantine/core';
+import { Table,SimpleGrid, Image} from '@mantine/core';
 
 
 const mainLinksMockdata = [
@@ -64,25 +63,37 @@ const linksMockdata = [
   'Wiki pages',
 ];
 
+const dashMenuItems:Array<DashMenuItem> = [
+	{ item_icon: IconHome2, item_label: 'Home'},
+  	{ item_icon: IconGauge, item_label: 'Dashboard' },
+  	{ item_icon: IconDeviceDesktopAnalytics, item_label: 'Analytics'},
+  	{ item_icon: IconCalendarStats, item_label: 'Releases' },
+  	{ item_icon: IconUser, item_label: 'Account' },
+  	{ item_icon: IconFingerprint, item_label: 'Security' },
+  	{ item_icon: IconSettings, item_label: 'Settings' },
+	];
+
+const theAdminDashData:AdminDash =  {menu: dashMenuItems};
+
 export function DoubleNavbarAdminDash() {
   const [opened, { toggle }] = useDisclosure();
   const [active, setActive] = useState('Releases');
   const [activeLink, setActiveLink] = useState('Settings');
   					
-  const mainLinks = mainLinksMockdata.map((link) => (
+  const mainLinks = theAdminDashData.menu.map((menuitem) => (
     <Tooltip
-      label={link.label}
+      label={menuitem.item_label}
       position="right"
       withArrow
       transitionProps={{ duration: 0 }}
-      key={link.label}
+      key={menuitem.item_label}
     >
       <UnstyledButton
-        onClick={() => setActive(link.label)}
+        onClick={() => setActive(menuitem.item_label)}
         className={classes.mainLink}
-        data-active={link.label === active || undefined}
+        data-active={menuitem.item_label === active || undefined}
       >
-        <link.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
+        <menuitem.item_icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
       </UnstyledButton>
     </Tooltip>
   ));
@@ -158,7 +169,7 @@ export function DoubleNavbarAdminDash() {
           <Title order={4} className={classes.title}>
             {active}
           </Title>
-
+          
           {links}
         </div>
       </div>
@@ -214,12 +225,36 @@ export function DoubleNavbarAdminDash() {
 
 			      <Tabs.Panel value="city">
 				City Gallery
-				<Image
-				      radius="md"
-				      h={200}
-      				      w="auto"
-				      src="/0dark30.jpg"
-				    />
+				
+				    
+				    <SimpleGrid cols={3}>
+				      <div>
+				      	<Image
+					      radius="md"
+					      h={200}
+	      				      w="auto"
+					      src="/0dark30.jpg"
+					/>
+				      </div>
+				      <div>
+				      	<Image
+					      radius="md"
+					      h={250}
+	      				      w="auto"
+					      src="/aleksandar-pasaric.jpg"
+					/>
+				      </div>
+				      <div>
+				      	<Image
+					      radius="md"
+					      h={250}
+	      				      w="auto"
+					      src="/david-skyrius.jpg"
+					/>
+				      </div>
+				      
+				      
+				    </SimpleGrid>
 			      </Tabs.Panel>
 		    	</Tabs>
 	    	</Grid.Col>

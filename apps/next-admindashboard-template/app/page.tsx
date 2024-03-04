@@ -5,8 +5,12 @@ import { Code } from "@repo/ui/code";
 import { Button } from "@repo/ui/button";
 import { DoubleNavbarAdminDash } from "@repo/ui/DoubleNavbarAdminDash";
 import { DemoDonutChart } from "@repo/ui/DemoDonutChart";
-import { Container } from '@mantine/core';
 
+import { AdminDash } from "@repo/ui/AdminDash";
+import { DashMenuItem } from "@repo/ui/DashMenuItem";
+import { SubMenuItem } from "@repo/ui/SubMenuItem";
+
+import { Container } from '@mantine/core';
 
 
 const LINKS = [
@@ -38,7 +42,7 @@ export default function Page(): JSX.Element {
 
   return (
     <main>
-	<DoubleNavbarAdminDash/>
+	<DoubleNavbarAdminDash />
 
     </main>
   );
