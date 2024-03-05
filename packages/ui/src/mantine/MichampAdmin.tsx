@@ -7,11 +7,10 @@ export type SubMenuItem{
 export type DashMenuItem{
 	item_icon:any;
 	item_label:string;
-	item_submenu?:Array<SubMenuItem>;
 }
 
 export interface AdminDash {
   menu: Array<DashMenuItem>,
-  
+  pageSubMenu:Array<SubMenuItem>
 }
 

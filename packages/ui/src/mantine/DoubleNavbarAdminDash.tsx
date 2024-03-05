@@ -38,17 +38,6 @@ import { IconGitBranch, IconGitPullRequest, IconGitCommit, IconMessageDots } fro
 
 import { Table,SimpleGrid, Image} from '@mantine/core';
 
-
-const mainLinksMockdata = [
-  { icon: IconHome2, label: 'Home' },
-  { icon: IconGauge, label: 'Dashboard' },
-  { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-  { icon: IconCalendarStats, label: 'Releases' },
-  { icon: IconUser, label: 'Account' },
-  { icon: IconFingerprint, label: 'Security' },
-  { icon: IconSettings, label: 'Settings' },
-];
-
 const iconsMap = new Map<string, any>([
 	["IconHome2", IconHome2], 
 	["IconGauge", IconGauge], 
@@ -73,24 +62,8 @@ const linksMockdata = [
   'Wiki pages',
 ];
 
-/*const dashMenuItems:Array<DashMenuItem> = [
-	{ item_icon: IconHome2, item_label: 'Home'},
-  	{ item_icon: IconGauge, item_label: 'Dashboard' },
-  	{ item_icon: IconDeviceDesktopAnalytics, item_label: 'Analytics'},
-  	{ item_icon: IconCalendarStats, item_label: 'Releases' },
-  	{ item_icon: IconUser, item_label: 'Account' },
-  	{ item_icon: IconFingerprint, item_label: 'Security' },
-  	{ item_icon: IconSettings, item_label: 'Settings' },
-	];
-*/
-//const theAdminDashData:AdminDash =  {menu: dashMenuItems};
 
-
-interface NavbarMenuConfig {
-	menuConfig:AdminDash
-}
-
-export function DoubleNavbarAdminDash({menuConfig}):NavbarMenuConfig {
+export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
   const [opened, { toggle }] = useDisclosure();
   const [active, setActive] = useState('Releases');
   const [activeLink, setActiveLink] = useState('Settings');
@@ -98,8 +71,7 @@ export function DoubleNavbarAdminDash({menuConfig}):NavbarMenuConfig {
   const mcWithIcons:Array<AdminDash> = menuConfig.menu.map((menuitem) => {
   	return {
   item_label:menuitem.item_label,
-  item_icon: iconsMap.get(menuitem.item_icon),
-  item_submenu:menuitem.item_submenu}
+  item_icon: iconsMap.get(menuitem.item_icon)}
   });
   				
   const mainLinks = mcWithIcons.map((menuitem) => (
