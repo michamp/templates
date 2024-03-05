@@ -5,7 +5,7 @@ export type SubMenuItem{
 }
 
 export type DashMenuItem{
-	item_icon:string;
+	item_icon:any;
 	item_label:string;
 	item_submenu?:Array<SubMenuItem>;
 }

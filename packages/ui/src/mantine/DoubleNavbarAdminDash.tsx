@@ -49,6 +49,16 @@ const mainLinksMockdata = [
   { icon: IconSettings, label: 'Settings' },
 ];
 
+const iconsMap = new Map<string, any>([
+	["IconHome2", IconHome2], 
+	["IconGauge", IconGauge], 
+	["IconDeviceDesktopAnalytics", IconDeviceDesktopAnalytics],
+	["IconCalendarStats", IconCalendarStats],
+	["IconUser", IconUser],
+	["IconFingerprint", IconFingerprint],
+	["IconSettings", IconSettings]
+]);
+
 const linksMockdata = [
   'Security',
   'Settings',
@@ -63,7 +73,7 @@ const linksMockdata = [
   'Wiki pages',
 ];
 
-const dashMenuItems:Array<DashMenuItem> = [
+/*const dashMenuItems:Array<DashMenuItem> = [
 	{ item_icon: IconHome2, item_label: 'Home'},
   	{ item_icon: IconGauge, item_label: 'Dashboard' },
   	{ item_icon: IconDeviceDesktopAnalytics, item_label: 'Analytics'},
@@ -72,22 +82,34 @@ const dashMenuItems:Array<DashMenuItem> = [
   	{ item_icon: IconFingerprint, item_label: 'Security' },
   	{ item_icon: IconSettings, item_label: 'Settings' },
 	];
+*/
+//const theAdminDashData:AdminDash =  {menu: dashMenuItems};
 
-const theAdminDashData:AdminDash =  {menu: dashMenuItems};
 
-export function DoubleNavbarAdminDash() {
+interface NavbarMenuConfig {
+	menuConfig:AdminDash
+}
+
+export function DoubleNavbarAdminDash({menuConfig}):NavbarMenuConfig {
   const [opened, { toggle }] = useDisclosure();
   const [active, setActive] = useState('Releases');
   const [activeLink, setActiveLink] = useState('Settings');
-  					
-  const mainLinks = theAdminDashData.menu.map((menuitem) => (
-    <Tooltip
+  
+  const mcWithIcons:Array<AdminDash> = menuConfig.menu.map((menuitem) => {
+  	return {
+  item_label:menuitem.item_label,
+  item_icon: iconsMap.get(menuitem.item_icon),
+  item_submenu:menuitem.item_submenu}
+  });
+  				
+  const mainLinks = mcWithIcons.map((menuitem) => (
+     <Tooltip
       label={menuitem.item_label}
       position="right"
       withArrow
       transitionProps={{ duration: 0 }}
       key={menuitem.item_label}
-    >
+      >
       <UnstyledButton
         onClick={() => setActive(menuitem.item_label)}
         className={classes.mainLink}

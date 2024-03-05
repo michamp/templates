@@ -39,10 +39,21 @@ const LINKS = [
 
 export default function Page(): JSX.Element {
 
+  const dashMenuItems:Array<DashMenuItem> = [
+	{ item_icon: "IconHome2", item_label: 'Home'},
+  	{ item_icon: "IconGauge", item_label: 'Dashboard' },
+  	{ item_icon: "IconDeviceDesktopAnalytics", item_label: 'Tables'},
+  	{ item_icon: "IconCalendarStats", item_label: 'Releases' },
+  	{ item_icon: "IconUser", item_label: 'Account' },
+  	{ item_icon: "IconFingerprint", item_label: 'Security' },
+  	{ item_icon: "IconSettings", item_label: 'Settings' },
+	];
+
+  const dashMenuConfig:AdminDash =  {menu: dashMenuItems};
 
   return (
     <main>
-	<DoubleNavbarAdminDash />
+	<DoubleNavbarAdminDash menuConfig={dashMenuConfig}/>
 
     </main>
   );
