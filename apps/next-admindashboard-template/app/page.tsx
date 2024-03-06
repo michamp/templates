@@ -41,15 +41,36 @@ export default function Page(): JSX.Element {
 
   const dashMenuItems:Array<DashMenuItem> = [
 	{ item_icon: "IconHome2", item_label: 'Home'},
-  	{ item_icon: "IconGauge", item_label: 'Dashboard' },
-  	{ item_icon: "IconDeviceDesktopAnalytics", item_label: 'Tables'},
-  	{ item_icon: "IconCalendarStats", item_label: 'Releases' },
+  	{ item_icon: "IconLayoutDashboard", item_label: 'Dashboard' },
+  	{ item_icon: "IconTable", item_label: 'Tables'},
+  	{ item_icon: "IconForms", item_label: 'Forms' },
+  	{ item_icon: "IconChartDots2", item_label: 'Charts' },
+    	{ item_icon: "IconCalendarMonth", item_label: 'Calendars' },	
+  	{ item_icon: "IconFileInfo", item_label: 'Pages' },
+  	{ item_icon: "IconAppWindow", item_label: 'UI Elements' },  	
   	{ item_icon: "IconUser", item_label: 'Account' },
   	{ item_icon: "IconFingerprint", item_label: 'Security' },
+  	{ item_icon: "IconUsersGroup", item_label: 'Users' },
   	{ item_icon: "IconSettings", item_label: 'Settings' },
 	];
+	
 
-  const dashMenuConfig:AdminDash =  {menu: dashMenuItems};
+const pageSubMenuItems:Array<SubMenuItem> = [
+
+  { icon: "IconLayoutDashboard", label: 'Dashboard',link:"/dash" },
+  { icon: "IconTable", label: 'Tables',link:"/tables" },
+  { icon: "IconForms", label: 'Forms',link:"/forms"  },
+  { icon: "IconChartDots2", label: 'Charts',link:"/charts"  },
+  { icon: "IconCalendarMonth,", label: 'Calendars',link:"/calendars" },	
+  { icon: "IconFileInfo", label: 'Pages',link:"/pages" },
+  { icon: "IconAppWindow", label: 'UI Elements',link:"/ui" },  	
+  { icon: "IconUser", label: 'Account',link:"/useraccount"  },
+  { icon: "IconFingerprint", label: 'Security',link:"/security"  },
+  { icon: "IconUsersGroup", label: 'Users',link:"/users"  },
+  { icon: "IconSettings", label: 'Settings',link:"/settings"  },
+];
+
+  const dashMenuConfig:AdminDash =  {menu: dashMenuItems,pageSubMenu: pageSubMenuItems};
 
   return (
     <main>

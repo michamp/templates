@@ -1,6 +1,6 @@
 "use client";
 
-import {AdminDash,DashMenuItem,SubMenuItem} from "./MichampAdmin"
+import {AdminDash,DashMenuItem,SubMenuItem} from "./AdminDashboard"
 
 import { AppShell, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -26,6 +26,15 @@ import {
   IconPaw,
   IconMapSearch,
   IconKarate,
+  
+  IconLayoutDashboard,
+  IconForms, 
+  IconTable,
+  IconChartDots2,
+  IconCalendarMonth,
+  IconFileInfo,
+  IconAppWindow,
+  IconUsersGroup
 } from '@tabler/icons-react';
 import classes from './DoubleNavbar.module.css';
 
@@ -40,12 +49,17 @@ import { Table,SimpleGrid, Image} from '@mantine/core';
 
 const iconsMap = new Map<string, any>([
 	["IconHome2", IconHome2], 
-	["IconGauge", IconGauge], 
-	["IconDeviceDesktopAnalytics", IconDeviceDesktopAnalytics],
-	["IconCalendarStats", IconCalendarStats],
+	["IconLayoutDashboard", IconLayoutDashboard], 
+	["IconForms", IconForms],
+	["IconTable", IconTable],
+	["IconChartDots2", IconChartDots2],
+	["IconCalendarMonth", IconCalendarMonth],
+	["IconFileInfo", IconFileInfo],
+	["IconAppWindow", IconAppWindow],
 	["IconUser", IconUser],
+	["IconUsersGroup", IconUsersGroup],
 	["IconFingerprint", IconFingerprint],
-	["IconSettings", IconSettings]
+	["IconSettings", IconSettings],
 ]);
 
 const linksMockdata = [
@@ -68,12 +82,13 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
   const [active, setActive] = useState('Releases');
   const [activeLink, setActiveLink] = useState('Settings');
   
-  const mcWithIcons:Array<AdminDash> = menuConfig.menu.map((menuitem) => {
+  const mcWithIcons:Array<DashMenuItem> = menuConfig.menu.map((menuitem) => {
   	return {
   item_label:menuitem.item_label,
-  item_icon: iconsMap.get(menuitem.item_icon)}
+  item_icon: iconsMap.get(menuitem.item_icon),}
+  
   });
-  				
+  	
   const mainLinks = mcWithIcons.map((menuitem) => (
      <Tooltip
       label={menuitem.item_label}
@@ -92,18 +107,19 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
     </Tooltip>
   ));
 
-  const links = linksMockdata.map((link) => (
+
+  const links = menuConfig.pageSubMenu.map((submenuitem) => (
     <a
       className={classes.link}
-      data-active={activeLink === link || undefined}
-      href="#"
+      data-active={activeLink === submenuitem.label || undefined}
+      href={submenuitem.link}
       onClick={(event) => {
         event.preventDefault();
-        setActiveLink(link);
+        setActiveLink(submenuitem.label);
       }}
-      key={link}
+      key={submenuitem.label}
     >
-      {link}
+      {submenuitem.label}
     </a>
   ));
   
