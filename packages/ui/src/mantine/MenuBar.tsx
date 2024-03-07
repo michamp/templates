@@ -25,6 +25,7 @@ import {
   IconTrash,
   IconSwitchHorizontal,
   IconChevronDown,
+  IconFilePlus,
 } from '@tabler/icons-react';
 
 import classes from './MenuBar.module.css';
@@ -72,6 +73,18 @@ export function MenuBar({title}:{title:string}) {
               </UnstyledButton>
             </Menu.Target>
             <Menu.Dropdown>
+            <Menu.Item
+                leftSection={
+                  <IconFilePlus
+                    style={{ width: rem(16), height: rem(16) }}
+                    color={theme.colors.green[6]}
+                    stroke={1.5}
+                  />
+                }
+              >
+		New Post
+              </Menu.Item>
+            
               <Menu.Item
                 leftSection={
                   <IconHeart
