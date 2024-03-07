@@ -9,8 +9,8 @@ import {
   Group,
   Text,
   Menu,
-  Tabs,
   Burger,
+  Title,
   rem,
   useMantineTheme,
 } from '@mantine/core';
@@ -27,7 +27,7 @@ import {
   IconChevronDown,
 } from '@tabler/icons-react';
 
-import classes from './MenuBarTabs.module.css';
+import classes from './MenuBar.module.css';
 
 const user = {
   name: 'Jane Green-McCoy',
@@ -35,33 +35,18 @@ const user = {
   image: '/hajib.png',
 };
 
-const tabs = [
-  'Home',
-  'Orders',
-  'Education',
-  'Community',
-  'Forums',
-  'Support',
-  'Account',
-  'Helpdesk',
-];
 
-export function MenuBarTabs() {
+export function MenuBar({title}:{title:string}) {
   const theme = useMantineTheme();
   const [opened, { toggle }] = useDisclosure(false);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
-
-  const items = tabs.map((tab) => (
-    <Tabs.Tab value={tab} key={tab}>
-      {tab}
-    </Tabs.Tab>
-  ));
 
   return (
     <div className={classes.header}>
       <Container className={classes.mainSection} size="md">
         <Group justify="space-between" align="right">
-          
+      	<Title order={1} size="h2">{title}</Title>
+
 
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
 
@@ -165,18 +150,7 @@ export function MenuBarTabs() {
         </Group>
       </Container>
       <Container size="md">
-        <Tabs
-          defaultValue="Home"
-          variant="outline"
-          visibleFrom="sm"
-          classNames={{
-            root: classes.tabs,
-            list: classes.tabsList,
-            tab: classes.tab,
-          }}
-        >
-          <Tabs.List>{items}</Tabs.List>
-        </Tabs>
+        
       </Container>
     </div>
   );

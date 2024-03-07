@@ -67,9 +67,9 @@ export default function Page(): JSX.Element {
 	  { icon: "IconFingerprint", label: 'Security',link:"#security"  },
 	  { icon: "IconUsersGroup", label: 'Users',link:"#users"  },
 	  { icon: "IconSettings", label: 'Settings',link:"#settings"  },
-	];
-
-  const dashMenuConfig:AdminDash =  {active_menuitem:'Home',menu: dashMenuItems,pageSubMenu: pageSubMenuItems};
+	  ];
+	  
+  const dashMenuConfig:AdminDash =  {active_menuitem:'Tables',menu: dashMenuItems,pageSubMenu: pageSubMenuItems};
 
   return (
     <main>

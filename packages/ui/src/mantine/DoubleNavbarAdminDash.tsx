@@ -2,9 +2,9 @@
 
 import {AdminDash,DashMenuItem,SubMenuItem} from "./AdminDashboard"
 
-import { AppShell, Burger } from '@mantine/core';
+import { AppShell, Burger, Anchor } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MenuBarTabs } from "@repo/ui/MenuBarTabs";
+import { MenuBar } from "@repo/ui/MenuBar";
 import { DemoDonutChart } from "@repo/ui/DemoDonutChart";
 import { DemoAreaChart } from "@repo/ui/DemoAreaChart";
 import { Grid, Skeleton, Container } from '@mantine/core';
@@ -85,10 +85,13 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
   const mcWithIcons:Array<DashMenuItem> = menuConfig.menu.map((menuitem) => {
   	return {
   item_label:menuitem.item_label,
-  item_icon: iconsMap.get(menuitem.item_icon),}
+  item_icon: iconsMap.get(menuitem.item_icon),
+  item_link: menuitem.item_link}
   
   });
   	
+  const pagetitle = menuConfig.active_menuitem;
+
   const mainLinks = mcWithIcons.map((menuitem) => (
      <Tooltip
       label={menuitem.item_label}
@@ -98,11 +101,14 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
       key={menuitem.item_label}
       >
       <UnstyledButton
-        onClick={() => setActive(menuitem.item_label)}
+        onClick={() => {setActive(menuitem.item_label);window.open(menuitem.item_link,"_self")}}
         className={classes.mainLink}
         data-active={menuitem.item_label === active || undefined}
       >
+
         <menuitem.item_icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
+
+
       </UnstyledButton>
     </Tooltip>
   ));
@@ -164,14 +170,13 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
           hiddenFrom="sm"
           size="sm"
         />
-        <MenuBarTabs/>
+        <MenuBar title={pagetitle}/>
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
       <div className={classes.wrapper}>
         <div className={classes.aside}>
           <div className={classes.logo}>
-            <p>LOGO</p>
           </div>
           {mainLinks}
         </div>

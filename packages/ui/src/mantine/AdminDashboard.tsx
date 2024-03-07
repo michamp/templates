@@ -7,10 +7,12 @@ export type SubMenuItem{
 export type DashMenuItem{
 	item_icon:any;
 	item_label:string;
+	item_link:string;
 }
 
 export interface AdminDash {
   menu: Array<DashMenuItem>,
-  pageSubMenu:Array<SubMenuItem>
+  pageSubMenu:Array<SubMenuItem>,
+  active_menuitem:string,
 }
 
