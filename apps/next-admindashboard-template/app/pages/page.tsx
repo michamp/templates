@@ -1,6 +1,8 @@
-
+import Image from "next/image";
+import { Card } from "@repo/ui/card";
+import { Code } from "@repo/ui/code";
 //import styles from "./page.module.css";
-
+import { Button } from "@repo/ui/button";
 import { DoubleNavbarAdminDash } from "@repo/ui/DoubleNavbarAdminDash";
 import { DemoDonutChart } from "@repo/ui/DemoDonutChart";
 
@@ -9,6 +11,31 @@ import { DashMenuItem } from "@repo/ui/DashMenuItem";
 import { SubMenuItem } from "@repo/ui/SubMenuItem";
 
 import { Container } from '@mantine/core';
+
+
+const LINKS = [
+  {
+    title: "Docs",
+    href: "https://turbo.build/repo/docs",
+    description: "Find in-depth information about Turborepo features and API.",
+  },
+  {
+    title: "Learn",
+    href: "https://turbo.build/repo/docs/handbook",
+    description: "Learn more about monorepos with our handbook.",
+  },
+  {
+    title: "Templates",
+    href: "https://turbo.build/repo/docs/getting-started/from-example",
+    description: "Choose from over 15 examples and deploy with a single click.",
+  },
+  {
+    title: "Deploy",
+    href: "https://vercel.com/new",
+    description:
+      "Instantly deploy your Turborepo to a shareable URL with Vercel.",
+  },
+];
 
 export default function Page(): JSX.Element {
 
@@ -29,10 +56,10 @@ export default function Page(): JSX.Element {
 	
 
   const pageSubMenuItems:Array<SubMenuItem> = [
-	  { icon: "IconLayoutDashboard", label: 'Theme Color Mode',link:"#dash" },
-	  { icon: "IconChartDots2", label: 'Charts',link:"#tables" },
-	  { icon: "IconCalendarMonth", label: 'Timeline',link:"#forms"  },
-	  { icon: "IconCategory", label: 'Tabs',link:"#charts"  },
+	  { icon: "IconLayoutDashboard", label: 'Dashboard',link:"#dash" },
+	  { icon: "IconTable", label: 'Tables',link:"#tables" },
+	  { icon: "IconForms", label: 'Forms',link:"#forms"  },
+	  { icon: "IconChartDots2", label: 'Charts',link:"#charts"  },
 	  { icon: "IconCalendarMonth,", label: 'Calendars',link:"#calendars" },	
 	  { icon: "IconFileInfo", label: 'Pages',link:"#pages" },
 	  { icon: "IconAppWindow", label: 'UI Elements',link:"#ui" },  	
@@ -42,11 +69,7 @@ export default function Page(): JSX.Element {
 	  { icon: "IconSettings", label: 'Settings',link:"#settings"  },
 	  ];
 	  
-	  
-  const dashMenuConfig:AdminDash =  {active_menuitem:'Dashboard',
-                                     menu: dashMenuItems,
-                                     pageSubMenu: pageSubMenuItems,
-                                     pageWidgetName:'DashWidgets',};
+  const dashMenuConfig:AdminDash =  {active_menuitem:'Pages',menu: dashMenuItems,pageSubMenu: pageSubMenuItems};
 
   return (
     <main>

@@ -7,6 +7,20 @@
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
     "./DoubleNavbar": "./src/mantine/DoubleNavbar.tsx",
+    
+    "./DashWidgets": "./src/mantine/DashWidgets.tsx",
+    "./HomeWidgets": "./src/mantine/HomeWidgets.tsx",
+    "./CalendarsWidgets": "./src/mantine/CalendarsWidgets.tsx",
+    "./ChartsWidgets": "./src/mantine/ChartsWidgets.tsx",
+    "./FormsWidgets": "./src/mantine/FormsWidgets.tsx",
+    "./PagesWidgets": "./src/mantine/PagesWidgets.tsx",
+    "./SettingsWidgets": "./src/mantine/SettingsWidgets.tsx",
+    "./TablesWidgets": "./src/mantine/TablesWidgets.tsx",
+    "./UIElementsWidgets": "./src/mantine/UIElementsWidgets.tsx",
+    "./UserAccountWidgets": "./src/mantine/UserAccountWidgets.tsx",
+    "./UsersWidgets": "./src/mantine/UsersWidgets.tsx",
+
+                                    
     "./MenuBar": "./src/mantine/MenuBar.tsx",
     "./DoubleNavbarAdminDash": "./src/mantine/DoubleNavbarAdminDash.tsx",
     "./DemoDonutChart": "./src/mantine/DemoDonutChart.tsx",

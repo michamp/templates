@@ -11,7 +11,7 @@ import { ColorSchemeScript, MantineProvider, createTheme} from '@mantine/core';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Double Navbar Admin Dashboard",
+  title: "NextJS Admin Dashboard",
   description: "Simple Next Mantine Admin Dashboard Template",
 };
 

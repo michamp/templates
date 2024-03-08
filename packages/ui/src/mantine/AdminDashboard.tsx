@@ -11,8 +11,9 @@ export type DashMenuItem{
 }
 
 export interface AdminDash {
-  menu: Array<DashMenuItem>,
-  pageSubMenu:Array<SubMenuItem>,
-  active_menuitem:string,
+  menu: Array<DashMenuItem>;
+  pageSubMenu:Array<SubMenuItem>;
+  active_menuitem:string;
+  pageWidgetName:string;
 }
 

@@ -1,26 +1,11 @@
 "use client";
 
-import {AdminDash,DashMenuItem,SubMenuItem} from "./AdminDashboard"
-
 import { AppShell, Burger, Anchor } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MenuBar } from "@repo/ui/MenuBar";
 import { DemoDonutChart } from "@repo/ui/DemoDonutChart";
 import { DemoAreaChart } from "@repo/ui/DemoAreaChart";
 import { Grid, Skeleton, Container } from '@mantine/core';
-
-import { DashWidgets } from "@repo/ui/DashWidgets";
-import { HomeWidgets } from "@repo/ui/HomeWidgets";
-import { CalendarsWidgets } from "@repo/ui/DashWidgets";
-import { ChartsWidgets } from "@repo/ui/ChartsWidgets";
-import { FormsWidgets } from "@repo/ui/FormsWidgets";
-import { PagesWidgets } from "@repo/ui/PagesWidgets";
-import { SettingsWidgets } from "@repo/ui/SettingsWidgets";
-import { TablesWidgets } from "@repo/ui/TablesWidgets";
-import { UIElementsWidgets } from "@repo/ui/UIElementsWidgets";
-import { UserAccountWidgets } from "@repo/ui/UserAccountWidgets";
-import { UsersWidgets } from "@repo/ui/UsersWidgets";
-
 
 import '@mantine/charts/styles.css';
 import { Tabs } from '@mantine/core';
@@ -47,10 +32,9 @@ import {
   IconCalendarMonth,
   IconFileInfo,
   IconAppWindow,
-  IconUsersGroup,
-  IconCategory,
+  IconUsersGroup
 } from '@tabler/icons-react';
-import classes from './DoubleNavbar.module.css';
+import classes from './DashWidgets.module.css';
 
 import { useMantineColorScheme, Button, Group } from '@mantine/core';
 
@@ -61,90 +45,8 @@ import { IconGitBranch, IconGitPullRequest, IconGitCommit, IconMessageDots } fro
 
 import { Table,SimpleGrid, Image} from '@mantine/core';
 
-const iconsMap = new Map<string, any>([
-	["IconHome2", IconHome2], 
-	["IconLayoutDashboard", IconLayoutDashboard], 
-	["IconForms", IconForms],
-	["IconTable", IconTable],
-	["IconChartDots2", IconChartDots2],
-	["IconCalendarMonth", IconCalendarMonth],
-	["IconFileInfo", IconFileInfo],
-	["IconAppWindow", IconAppWindow],
-	["IconUser", IconUser],
-	["IconUsersGroup", IconUsersGroup],
-	["IconFingerprint", IconFingerprint],
-	["IconSettings", IconSettings],
-	["IconCategory", IconCategory],
-]);
-
-const pageWidgetsMap = new Map<string, any>([
-	["DashWidgets", <DashWidgets/>], 
-	["HomeWidgets", <HomeWidgets/>], 
-	["CalendarsWidgets", <CalendarsWidgets/>], 
-	["ChartsWidgets", <ChartsWidgets/>], 
-	["FormsWidgets", <FormsWidgets/>], 
-	["PagesWidgets", <PagesWidgets/>], 
-	["SettingsWidgets", <SettingsWidgets/>], 
-	["TablesWidgets", <TablesWidgets/>], 
-	["UIElementsWidgets", <UIElementsWidgets/>], 
-	["UserAccountWidgets", <UserAccountWidgets/>], 
-	["UsersWidgets", <UsersWidgets/>], 
-
-]);
-
-export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
-  const [opened, { toggle }] = useDisclosure();
-  const [active, setActive] = useState(menuConfig.active_menuitem);
-  const [activeLink, setActiveLink] = useState('Settings');
-  
-  const mcWithIcons:Array<DashMenuItem> = menuConfig.menu.map((menuitem) => {
-  	return {
-  item_label:menuitem.item_label,
-  item_icon: iconsMap.get(menuitem.item_icon),
-  item_link: menuitem.item_link}
-  
-  });
-  	
-  const pagetitle = menuConfig.active_menuitem;
-
-  const mainLinks = mcWithIcons.map((menuitem) => (
-     <Tooltip
-      label={menuitem.item_label}
-      position="right"
-      withArrow
-      transitionProps={{ duration: 0 }}
-      key={menuitem.item_label}
-      >
-      <UnstyledButton
-        onClick={() => {setActive(menuitem.item_label);window.open(menuitem.item_link,"_self")}}
-        className={classes.mainLink}
-        data-active={menuitem.item_label === active || undefined}
-      >
-
-        <menuitem.item_icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
-
-
-      </UnstyledButton>
-    </Tooltip>
-  ));
-
-
-  const links = menuConfig.pageSubMenu.map((submenuitem) => (
-    <a
-      className={classes.link}
-      data-active={activeLink === submenuitem.label || undefined}
-      href={submenuitem.link}
-      onClick={(event) => {
-        event.preventDefault();
-        setActiveLink(submenuitem.label);
-      }}
-      key={submenuitem.label}
-    >
-      {submenuitem.label}
-    </a>
-  ));
-  
-  const child = <Skeleton height={140} radius="md" animate={false} />;
+export function ChartsWidgets() {
+ 
   const iconStyle = { width: rem(12), height: rem(12) };
   const { setColorScheme, clearColorScheme } = useMantineColorScheme();
   
@@ -168,7 +70,6 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
       <Table.Td>{element.mass}</Table.Td>
     </Table.Tr>
   ));	
-  
   
   const mainContainer = (
   <Container my="md">
@@ -334,46 +235,6 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
   
   );
   return (
-    <AppShell
-      header={{ height: 60 }}
-      navbar={{
-        width: 300,
-        breakpoint: 'sm',
-        collapsed: { mobile: !opened },
-      }}
-      padding="lg"
-    >
-      <AppShell.Header>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          hiddenFrom="sm"
-          size="sm"
-        />
-        <MenuBar title={pagetitle}/>
-      </AppShell.Header>
-
-      <AppShell.Navbar p="md">
-      <div className={classes.wrapper}>
-        <div className={classes.aside}>
-          <div className={classes.logo}>
-          </div>
-          {mainLinks}
-        </div>
-        <div className={classes.main}>
-          <Title order={4} className={classes.title}>
-            {active}
-          </Title>
-          
-          {links}
-        </div>
-      </div>
-      </AppShell.Navbar>
-
-      <AppShell.Main>
-      	{pageWidgetsMap.get(menuConfig.pageWidgetName)}
-      </AppShell.Main>
-      
-    </AppShell>
+    mainContainer
   );
 }
