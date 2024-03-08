@@ -11,7 +11,7 @@ import { Grid, Skeleton, Container } from '@mantine/core';
 
 import { DashWidgets } from "@repo/ui/DashWidgets";
 import { HomeWidgets } from "@repo/ui/HomeWidgets";
-import { CalendarsWidgets } from "@repo/ui/DashWidgets";
+import { CalendarsWidgets } from "@repo/ui/CalendarsWidgets";
 import { ChartsWidgets } from "@repo/ui/ChartsWidgets";
 import { FormsWidgets } from "@repo/ui/FormsWidgets";
 import { PagesWidgets } from "@repo/ui/PagesWidgets";
