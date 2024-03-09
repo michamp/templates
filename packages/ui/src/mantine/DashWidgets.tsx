@@ -1,6 +1,6 @@
 "use client";
 
-import { AppShell, Burger, Anchor, Badge} from '@mantine/core';
+import { AppShell, Burger, Anchor, Badge,Card,Paper,Center} from '@mantine/core';
 import { useDisclosure,useWindowScroll } from '@mantine/hooks';
 import { MenuBar } from "@repo/ui/MenuBar";
 import { DemoDonutChart } from "@repo/ui/DemoDonutChart";
@@ -93,24 +93,48 @@ export function DashWidgets() {
 	  <SimpleGrid cols={2}>
 	      
 	      <div>
-	        <Title order={4} className={classes.title}>
-            		Users By Industry
-          	</Title>
+	      	<Card shadow="sm" padding="lg" radius="md" withBorder>
 
-			<DemoDonutChart dataConfig="defaultData" labelOfChart="By Industry"/></div>
+
+			<Title order={4} className={classes.title}>
+			    	Users By Industry
+			</Title>
+			<Paper shadow="xs" p="xl" withBorder="true">
+			<Center>
+			      <Group justify="space-between" mt="md" mb="xs">
+
+				<DemoDonutChart dataConfig="defaultData" labelOfChart="By Industry"/>
+			      </Group>
+			</Center>
+			</Paper>
+		</Card>
+	      </div>
 	      <div>
+	      	<Card shadow="sm" padding="lg" radius="md" withBorder>
+		      	<Title order={4} className={classes.title}>
+		    		Users By Country
+		  	</Title>
 
-	      	<Title order={4} className={classes.title}>
-            		Users By Country
-          	</Title>
-			<DemoDonutChart dataConfig="usersCountryOfOrigin" labelOfChart="Users By Country"/>
+			<Paper shadow="xs" p="xl" withBorder="true">
+				<Center>
+				      <Group justify="space-between" mt="md" mb="xs">
+
+					<DemoDonutChart dataConfig="usersCountryOfOrigin" labelOfChart="Users By Country"/>
+					</Group>
+				</Center>
+			</Paper>
+		</Card>
 		</div>
 			
 	      <div>
-	      		<Badge color="blue">3 Online</Badge>
+	      	      	<Card shadow="sm" padding="lg" radius="md" withBorder>
+
 			<Title order={4} className={classes.title}>
-            		Users Data Table
+            		Users Data Table <Badge color="blue">3 Online</Badge>
           		</Title>
+          		
+          		<Paper shadow="xs" p="xl" withBorder="true">
+				<Center>
 			<Table>
 			      <Table.Thead>
 				<Table.Tr>
@@ -122,13 +146,19 @@ export function DashWidgets() {
 			      </Table.Thead>
 			      <Table.Tbody>{usersRows}</Table.Tbody>
 		    	</Table>
+		    					</Center>
+			</Paper>
+		    	</Card>
 	     </div>
 		    	
 	      <div>
-
+	      	      	<Card shadow="sm" padding="lg" radius="md" withBorder>
 	      		<Title order={4} className={classes.title}>
             		Users Git Timeline
           	</Title>
+          	
+          	          		<Paper shadow="xs" p="xl" withBorder="true">
+				<Center>
 			<Timeline active={2} bulletSize={24} lineWidth={2}>
 		      
 		      <Timeline.Item bullet={<IconGitBranch size={12} />} title="New branch">
@@ -150,15 +180,29 @@ export function DashWidgets() {
 			<Text c="dimmed" size="sm"><Text variant="link" component="span" inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
 			<Text size="xs" mt={4}>12 minutes ago</Text>
 		      </Timeline.Item>
-		    </Timeline></div>
+		    </Timeline>
+		    </Center>
+			</Paper>
+		    	</Card>
+		    </div>
+		    
 		    <div>
-	      	<h1>Color Scheme</h1>
+		    	<Card shadow="sm" padding="lg" radius="md" withBorder>
+	      		<Title order={4} className={classes.title}>
+			Dark/Light Mode
+          		</Title>
+          		
+          		<Paper shadow="xs" p="xl" withBorder="true">
+          						<Center>
 			<Group>
 		      		<Button onClick={() => setColorScheme('light')}>Light</Button>
 		      		<Button onClick={() => setColorScheme('dark')}>Dark</Button>
 		      		<Button onClick={() => setColorScheme('auto')}>Auto</Button>
 		      		<Button onClick={clearColorScheme}>Clear</Button>
 	    		</Group>
+	    		</Center>
+			</Paper>
+		    	</Card>
 	      </div>
 	    </SimpleGrid>
   </Container>

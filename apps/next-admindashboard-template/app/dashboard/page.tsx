@@ -32,7 +32,7 @@ export default function Page(): JSX.Element {
 	  { icon: "IconLayoutDashboard", label: 'Users Chart',link:"#dash" },
 	  { icon: "IconChartDots2", label: 'User Data Table',link:"#tables" },
 	  { icon: "IconCalendarMonth", label: 'Git Timeline',link:"#forms"  },
-	  { icon: "IconCategory", label: 'Color Scheme',link:"#charts"  },
+	  { icon: "IconCategory", label: 'Dark/Light Mode',link:"#charts"  },
 	  ];
 	  
 	  
