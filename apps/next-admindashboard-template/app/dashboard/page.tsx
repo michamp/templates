@@ -29,17 +29,10 @@ export default function Page(): JSX.Element {
 	
 
   const pageSubMenuItems:Array<SubMenuItem> = [
-	  { icon: "IconLayoutDashboard", label: 'Theme Color Mode',link:"#dash" },
-	  { icon: "IconChartDots2", label: 'Charts',link:"#tables" },
-	  { icon: "IconCalendarMonth", label: 'Timeline',link:"#forms"  },
-	  { icon: "IconCategory", label: 'Tabs',link:"#charts"  },
-	  { icon: "IconCalendarMonth,", label: 'Calendars',link:"#calendars" },	
-	  { icon: "IconFileInfo", label: 'Pages',link:"#pages" },
-	  { icon: "IconAppWindow", label: 'UI Elements',link:"#ui" },  	
-	  { icon: "IconUser", label: 'Account',link:"#useraccount"  },
-	  { icon: "IconFingerprint", label: 'Security',link:"#security"  },
-	  { icon: "IconUsersGroup", label: 'Users',link:"#users"  },
-	  { icon: "IconSettings", label: 'Settings',link:"#settings"  },
+	  { icon: "IconLayoutDashboard", label: 'Users Chart',link:"#dash" },
+	  { icon: "IconChartDots2", label: 'User Data Table',link:"#tables" },
+	  { icon: "IconCalendarMonth", label: 'Git Timeline',link:"#forms"  },
+	  { icon: "IconCategory", label: 'Color Scheme',link:"#charts"  },
 	  ];
 	  
 	  
