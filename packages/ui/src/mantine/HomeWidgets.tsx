@@ -34,17 +34,14 @@ export function HomeWidgets() {
               <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
               any project
             </List.Item>
-            <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
-            </List.Item>
+            
           </List>
 
           <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
-              Get started
-            </Button>
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
+            
+            <Button variant="default" radius="xl" size="md" className={classes.control}
+            	onClick={() => {window.open("https://github.com/michamp/templates","_blank")}}
+            >
               Source code
             </Button>
           </Group>
@@ -54,7 +51,7 @@ export function HomeWidgets() {
 		radius="md"
 		h={200}
       		w="auto"
-		src="/heatmap.svg"
+		src="/designer.svg"
 		className={classes.image}
 	/>
       </div>

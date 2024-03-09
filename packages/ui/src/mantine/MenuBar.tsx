@@ -46,10 +46,9 @@ export function MenuBar({title}:{title:string}) {
     <div className={classes.header}>
       <Container className={classes.mainSection} size="md">
         <Group justify="space-between" align="right">
+        
       	<Title order={1} size="h2">{title}</Title>
 
-
-          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
 
           <Menu
             width={260}
