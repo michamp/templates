@@ -44,10 +44,11 @@ export default function Page(): JSX.Element {
 	  { icon: "IconSettings", label: 'Settings',link:"#settings"  },
 	];
 
-  const dashMenuConfig:AdminDash =  {active_menuitem:'NextJS Admin Dashboard',
+  const dashMenuConfig:AdminDash =  {activeMenuitem:'Home',
   			             menu: dashMenuItems,
                                      pageSubMenu: pageSubMenuItems,
-                                     pageWidgetName:'HomeWidgets',};
+                                     pageWidgetName:'HomeWidgets',
+                                     pageTitle:'NextJS Admin Dashboard',};
 
   return (
     <main>

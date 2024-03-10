@@ -13,7 +13,8 @@ export type DashMenuItem{
 export interface AdminDash {
   menu: Array<DashMenuItem>;
   pageSubMenu:Array<SubMenuItem>;
-  active_menuitem:string;
+  activeMenuitem:string;
   pageWidgetName:string;
+  pageTitle:string;
 }
 

@@ -36,10 +36,11 @@ export default function Page(): JSX.Element {
 	  ];
 	  
 	  
-  const dashMenuConfig:AdminDash =  {active_menuitem:'Dashboard',
+  const dashMenuConfig:AdminDash =  {activeMenuitem:'Dashboard',
                                      menu: dashMenuItems,
                                      pageSubMenu: pageSubMenuItems,
-                                     pageWidgetName:'DashWidgets',};
+                                     pageWidgetName:'DashWidgets',
+                                     pageTitle:'Dashboard',};
 
   return (
     <main>

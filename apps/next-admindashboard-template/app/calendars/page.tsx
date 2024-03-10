@@ -69,7 +69,7 @@ export default function Page(): JSX.Element {
 	  { icon: "IconSettings", label: 'Settings',link:"#settings"  },
 	  ];
 	  
-  const dashMenuConfig:AdminDash =  {active_menuitem:'Dashboard',menu: dashMenuItems,pageSubMenu: pageSubMenuItems};
+  const dashMenuConfig:AdminDash =  {activeMenuitem:'Calendars',menu: dashMenuItems,pageSubMenu: pageSubMenuItems};
 
   return (
     <main>

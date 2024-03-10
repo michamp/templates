@@ -94,7 +94,7 @@ const pageWidgetsMap = new Map<string, any>([
 
 export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
   const [opened, { toggle }] = useDisclosure();
-  const [active, setActive] = useState(menuConfig.active_menuitem);
+  const [active, setActive] = useState(menuConfig.activeMenuitem);
   const [activeLink, setActiveLink] = useState('Settings');
   
   const mcWithIcons:Array<DashMenuItem> = menuConfig.menu.map((menuitem) => {
@@ -105,7 +105,7 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
   
   });
   	
-  const pagetitle = menuConfig.active_menuitem;
+  const pagetitle = menuConfig.pageTitle;
 
   const mainLinks = mcWithIcons.map((menuitem) => (
      <Tooltip
@@ -361,9 +361,6 @@ export function DoubleNavbarAdminDash({menuConfig}):AdminDash {
           {mainLinks}
         </div>
         <div className={classes.main}>
-          <Title order={4} className={classes.title}>
-            {active}
-          </Title>
           
           {links}
         </div>
