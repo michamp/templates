@@ -27,12 +27,21 @@ export function HomeWidgets() {
             }
           >
             <List.Item>
+            	<b>Mantine UI</b> - Integrated Mantine components to speed up development time  	
+            </List.Item>
+                        
+            <List.Item>
               <b>TypeScript based</b> – build type safe applications, all components and hooks
               export types
             </List.Item>
             <List.Item>
               <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
               any project
+            </List.Item>
+            
+            <List.Item>
+            	<b>Turborepo </b> - Delivered as a monorepo to improve sharing of components with team members 
+            	and speed up adoption of newly developed components	
             </List.Item>
             
           </List>
